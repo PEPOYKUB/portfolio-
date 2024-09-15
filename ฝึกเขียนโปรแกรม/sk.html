@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        .game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(255, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .instructions {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+canvas {
+    border: 2px solid #333;
+    background-color: #fff;
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.instructions {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ตกแต่งสีของงู */
+.snake {
+    fill: #2ecc71; /* สีเขียว */
+}
+
+/* ตกแต่งสีของแอปเปิล */
+.apple {
+    fill: #e74c3c; /* สีแดง */
+}
+
+/* เมื่อ hover ที่ปุ่ม Game Over */
+.game-over:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* เมื่อกดที่ปุ่ม Game Over */
+.game-over:active {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+    </style>
+</head>
+<body>
+    <div id="game-over" class="game-over">
+        <h1>GAME OVER</h1>
+        <p>Press any key to play again</p>
+    </div>
+    <div id="instructions" class="instructions">
+        <h2>How to Play</h2>
+        <p>Use the arrow keys to move the snake.</p>
+        <p>Eat the red apples to grow your snake.</p>
+        <p>Avoid running into walls or the snake itself.</p>
+    </div>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        let canvas, ctx;
+        let snakeLength = 1; // ความยาวของงู
+        let x = 13; // เฟรมเรท
+        let interval; // สำหรับ setInterval
+
+        window.onload = function(){
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+
+            document.addEventListener("keydown", keyDownEvent);
+
+            interval = setInterval(draw, 1000 / x);
+        }
+
+        let gridSize = tileSize = 20;
+        let nextX = nextY = 0;
+
+        let defaultTailSize = 1;
+        let tailSize = defaultTailSize;
+        let snakeTrail = [];
+        let snakeX = snakeY = 10;
+
+        let appleX = appleY = 15;
+
+        function draw(){
+            snakeX += nextX;
+            snakeY += nextY;
+
+            // เช็คว่างูกินแอปเปิล
+            if (snakeX === appleX && snakeY === appleY) {
+                snakeLength++;
+                appleX = Math.floor(Math.random() * gridSize);
+                appleY = Math.floor(Math.random() * gridSize);
+            }
+
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "green";
+            for(let i = 0; i < snakeTrail.length; i++){
+                ctx.fillRect(
+                    snakeTrail[i].x * tileSize,
+                    snakeTrail[i].y * tileSize,
+                    tileSize,
+                    tileSize
+                )
+            }
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
+
+            snakeTrail.push({x: snakeX, y: snakeY});
+            while(snakeTrail.length > snakeLength){
+                snakeTrail.shift();
+            }
+
+            // เช็คว่างูโดนตัวเอง
+            for (let i = 0; i < snakeTrail.length - 1; i++) {
+                if (snakeX === snakeTrail[i].x && snakeY === snakeTrail[i].y) {
+                    endGame();
+                    return;
+                }
+            }
+
+            // เช็คว่างูออกนอกขอบ
+            if (snakeX < 0 || snakeX >= gridSize || snakeY < 0 || snakeY >= gridSize) {
+                endGame();
+            }
+        }
+
+        function resetGame() {
+            snakeLength = defaultTailSize;
+            snakeX = snakeY = 10;
+            appleX = appleY = 15;
+            snakeTrail = [];
+            document.getElementById('game-over').style.display = 'none';
+            interval = setInterval(draw, 1000 / x); // เริ่มเกมใหม่
+        }
+
+        function endGame() {
+            clearInterval(interval); // หยุดการเคลื่อนไหว
+            document.getElementById('game-over').style.display = 'block';
+        }
+
+        document.getElementById('game-over').addEventListener('click', function() {
+            resetGame();
+        });
+
+        function keyDownEvent(e){
+            switch(e.keyCode){
+                case 37:
+                    if (nextX !== 1) {
+                        nextX = -1;
+                        nextY = 0;
+                    }
+                    break;
+                case 38:
+                    if (nextY !== 1) {
+                        nextX = 0;
+                        nextY = -1;
+                    }
+                    break;
+                case 39:
+                    if (nextX !== -1) {
+                        nextX = 1;
+                        nextY = 0;
+                    }
+                    break;
+                case 40:
+                    if (nextY !== -1) {
+                        nextX = 0;
+                        nextY = 1;
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

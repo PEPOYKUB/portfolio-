@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 0 5px 5px 0;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* เพิ่มเส้นที่ข้างล่างของชื่อหัวข้อ */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* เปลี่ยนสีพื้นหลังของ container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8; /* เปลี่ยนสีเป็นสีเทาอ่อน */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* เปลี่ยนสีของปุ่ม Search */
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 0 5px 5px 0;
+    background-color: #000000; /* เปลี่ยนสีเป็นสีน้ำเงิน */
+    color: #fff;
+    cursor: pointer;
+}
+
+/* เพิ่มเส้นขอบของ movie card */
+.movie-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s; /* เพิ่ม animation ให้กับแต่ละ movie card */
+}
+
+/* เพิ่มเส้นขอบเมื่อ hover ที่ movie card */
+.movie-card:hover {
+    transform: translateY(-5px); /* เมื่อ hover ให้ขยับขึ้นบนลงล่าง */
+}
+
+/* เปลี่ยนสีของปุ่ม Start Learning */
+.language a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #000000; /* เปลี่ยนสีเป็นสีน้ำเงิน */
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.language a:hover {
+    background-color: #3b3b3b; /* เปลี่ยนสีเมื่อ hover เป็นสีน้ำเงินเข้ม */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.category {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.category li:before {
+    content: "•";
+    margin-right: 5px;
+    color: #090909;
+}

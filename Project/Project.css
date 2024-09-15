@@ -1,0 +1,143 @@
+/* Project.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.head1{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text{
+    margin-top: 20px;
+    background: linear-gradient(to right, #30CFD0, #c43ad6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1, p {
+    margin: 5px 0;
+    text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
+}
+
+/* hover ข้อความ */
+.text h1:hover, .text p:hover {
+    cursor: pointer;
+}
+
+/* Project.css */
+.BTN {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999; /* ให้ปุ่มอยู่ด้านหน้า */
+    background-color: rgb(255, 255, 255);
+    border-radius: 20%;
+}
+
+.BTN img{
+    width: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.Project {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(var(--text-color));
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+}
+
+.Project a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Project img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.text p {
+    margin: 10px 0;
+}
+
+.githup {
+    margin-top: 10px;
+}
+
+.githup a {
+    background-color: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.githup a:hover {
+    background-color: #777;
+}
+
+/* ปรับขนาดของปุ่ม BTN */
+.BTN img {
+    width: 30px;
+}
+
+/* ปรับการจัดกลุ่มของ Project */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .Project {
+        padding: 15px;
+    }
+
+    .BTN img {
+        width: 25px;
+    }
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ hover บนปุ่ม githup */
+.githup a:hover {
+    background-color: #777;
+    transform: scale(1.1);
+}
+
+hr{
+    color: rgb(var(--text-color));
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+}
+
+.Project:hover {
+    transform: scale(1.1); /* ขยายขนาดโปรเจคเมื่อโฮเวอร์ */
+    transition: transform 0.5s ease; /* เพิ่มเอฟเฟกต์ transition */
+}

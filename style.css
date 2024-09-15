@@ -1,0 +1,162 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-image: url('/Prot/D2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Content Container */
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+/* Portfolio Link */
+.PORTFOLIO {
+    font-size: 30px;
+    color: #656565;
+    text-decoration: underline;
+}
+
+/* Navigation Menu */
+nav {
+    margin: 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+nav a {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #656565;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effects */
+.PORTFOLIO:hover {
+    color: #333;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    color: #333;
+}
+
+/* Hello Section */
+.Hello {
+    margin-left: 90px;
+    margin-top: 100px;
+    max-width: 37%;
+}
+
+.H {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 30px;
+}
+
+.Hello p {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Button */
+.btn {
+    margin-top: 20px;
+    margin-left: 90px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.btn a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-decoration: none;
+    color: #656565;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Image Section */
+.man {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.man img {
+    max-width: 430px;
+    margin-right: 50px;
+}
+
+/* CSS Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply Animation to Element */
+.content {
+    animation: fadeIn 1s ease-out;
+}
+
+/* CSS Keyframes */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Apply Animation to Element */
+.man img {
+    max-width: 430px;
+    margin-right: 50px;
+    animation: slideInFromLeft 1s ease-out; /* เพิ่ม Animation เมื่อ Element ปรากฏ */
+}
+
+/* CSS Keyframes */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to Element */
+.Hello p {
+    font-family: "Segoe UI", Arial, sans-serif;
+    animation: fadeInText 1s ease-out; /* เพิ่ม Animation เข้ามาทีละประโยค */
+}

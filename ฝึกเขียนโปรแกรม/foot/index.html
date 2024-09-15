@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/ฝึกเขียนโปรแกรม/foot/index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-contaner">
+            <a href="#">
+                <img src="data:image/png;base64,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"
+                    class="logo">
+            </a>
+            <div class="nav-profile">
+                <p class="nav-profile-name">asdasds</p>
+                <div class="nav-profile-cart">
+                    <a href="table.php"><i class="fas fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="contaner">
+        <!-- บน -->
+        <div class="img-Burger">
+            <img src="https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302143_1280.jpg" class="Burger">
+            <div class="a-buynow">
+                <h1>hamburger</h1>
+                <p><br> It is the most delicious food with the softness of the meat.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ล่าง -->
+    <div class="content">
+        <br><br>
+        <div class="head-text">choose to buy</div>
+        <br>
+        <div class="content-shop">
+            <img src="https://d1vs91ctevllei.cloudfront.net/images/product/1657623608WOS-600x400-alc-qpc.png"
+                class="shop">
+            <div class="text-shop">
+                <p>ควอเตอร์ พาวน์เดอร์ วิท ชีส</p>
+                <p>155THB</p>
+                <a href="buy.php">BUY</a>
+            </div>
+        </div>
+
+        <div class="content-shop">
+            <img src="https://d1vs91ctevllei.cloudfront.net/images/product/1657623717WOS-600x400-alc-dqpc.png"
+                class="shop">
+            <div class="text-shop">
+                <p>ดับเบิ้ล ควอเตอร์ พาวน์เดอร์ วิท ชีส</p>
+                <p>215THB</p>
+                <a href="1buy.html">BUY</a>
+            </div>
+        </div>
+
+        <div class="content-shop">
+            <img src="https://d1vs91ctevllei.cloudfront.net/images/product/1657623807WOS-600x400-alc-qpcb.png"
+                class="shop">
+            <div class="text-shop">
+                <p>ควอเตอร์ พาวน์เดอร์ วิท ชีส เบคอน</p>
+                <p>175THB</p>
+                <a href="2buy.html">BUY</a>
+            </div>
+        </div>
+
+        <div class="content-shop">
+            <img src="https://d1vs91ctevllei.cloudfront.net/images/product/16830150959505.png" class="shop">
+            <div class="text-shop">
+                <p>ทรัฟเฟิล บีฟ เบอร์เกอร์</p>
+                <p>175THB</p>
+                <a href="3buy.html">BUY</a>
+            </div>
+        </div>
+
+        <div class="content-shop">
+            <img src="https://d1vs91ctevllei.cloudfront.net/images/product/1693190703TPO_1982_1000x1000_Cocktail%20Shrimp%20BG%20ALC.png"
+                class="shop">
+            <div class="text-shop">
+                <p>เบอร์เกอร์กุ้งคอกเทล</p>
+                <p>119THB</p>
+                <a href="4buy.html"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="modal" style="display: none;">
+        <div class="modal-bg"></div>
+        <div class="modal-page">
+            <h1>Mycard</h1>
+            <br>
+            <div class="cartlist-items">
+                <!-- กล่องฝั่งซ้าย -->
+                <div class="caetlist-left">
+                    <img src="https://d1vs91ctevllei.cloudfront.net/images/product/1657623717WOS-600x400-alc-dqpc.png"
+                        alt="">
+                    <div class="manumame">
+                        <p style="font-size: 1.5vw;">ชื่อเมนู</p>
+                        <p style="font-size: 1.2vw;">60THB</p>
+                    </div>
+                </div>
+                <!-- กล่องฝั่งขวา -->
+                <div class="cartlist-right">
+                    <p class="btnc">-</p>
+                    <p style="margin: 0 20px;">1</p>
+                    <p class="btnc">+</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

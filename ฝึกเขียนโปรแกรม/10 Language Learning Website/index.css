@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* ป้องกันเนื้อหาใน container ซ้อนกับ shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.languages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.language {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s; /* เพิ่ม animation ให้กับแต่ละ language */
+}
+
+.language:hover {
+    transform: translateY(-5px); /* เมื่อ hover ให้ขยับขึ้นบนลงล่าง */
+}
+
+.language img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.language h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.language a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #020202;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.language a:hover {
+    background-color: #6d6d6d;
+}
