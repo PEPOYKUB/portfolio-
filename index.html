@@ -1,40 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artist Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-0GftwQFZjgIQ5u/MetjHlUjK1krB0UXwLx+Z5TXUySYyj1VgWZyoFNzOShwK/Bwfd3rQRNnbOXk43Ekdp5qHfw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกอุปกรณ์</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <body>
-    <div class="content">
-      <div class="left">
-        <nav>
-          <a href="/POETFOLIO/portfolo.html" class="PORTFOLIO">PORTFOLIO</a>
-          <a href="#">Home</a>
-          <a href="/Contact/Contact.html">Contact</a>
-          <a href="/Project/Project.html">Project</a>
-        </nav>
-        <div class="Hello">
-          <p class="H">Hello, my name is Pai.</p>
-          <p>
-            This website created for me to introduce myself to everyone who
-            visits it.
-          </p>
-        </div>
-        <div class="btn">
-          <a href="/Resume.html/Resume.html">Resume</a>
-        </div>
-      </div>
-      <div class="right">
-        <div class="man">
-          <img src="/Prot/me.png" alt="" />
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/36106aa1c5.js" crossorigin="anonymous"></script>
-  </body>
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('00000001.jpg') no-repeat center center fixed; /* ใช้ภาพพื้นหลัง */
+            background-size: cover; /* ปรับขนาดภาพให้ครอบคลุมทั้งหน้าจอ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Device Selection Container */
+        .device-selection {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7); /* พื้นหลังโปร่งใส */
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* เงาเข้มขึ้น */
+            width: 90%;
+            max-width: 500px; /* ความกว้างสูงสุด */
+            backdrop-filter: blur(10px); /* ฟิลเตอร์เบลอพื้นหลัง */
+            border: 1px solid rgba(0, 0, 0, 0.1); /* ขอบบางเบา */
+        }
+
+        .device-selection h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #050505;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #858585;
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none; /* ลบขีดเส้นใต้ */
+        }
+    </style>
+</head>
+<body>
+
+<div class="device-selection">
+    <h1>กรุณาเลือกอุปกรณ์ของคุณ</h1>
+    <a href="2index.html"><button>เปิดบนมือถือ</button></a>
+    <a href="1index.html"><button>เปิดบนคอมพิวเตอร์</button></a>
+</div>
+
+</body>
 </html>
